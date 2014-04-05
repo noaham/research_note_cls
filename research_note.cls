@@ -10,7 +10,7 @@
 }
 \ProcessOptions\relax
 % Use article as base class
-\LoadClass[16pt]{article}
+\LoadClass{article}
 
 % We will use the titlesec package to process the title
 
@@ -22,8 +22,11 @@
 
 
 %%% Set global fonts
-
-\setromanfont{Garamond}
+\setmainfont[
+    BoldFont       ={* Bold}, 
+    ItalicFont     ={* Italic},
+    BoldItalicFont ={* Bold Italic}]
+{DTLAlbertinaT}
 \setsansfont{Helvetica Neue Light}
 
 
@@ -32,7 +35,7 @@
 \newfontfamily\titlefont[Color=121212]{Helvetica Neue Light}
 \newfontfamily\metafont[Color=303030]{Helvetica Neue Light}
 
-\renewcommand{\normalsize}{\fontsize{10}{12}\normalfont}
+\renewcommand{\normalsize}{\fontsize{10}{13}\normalfont}
 
 %%% Heading and author/date
 
