@@ -6,7 +6,7 @@
 
 % This is to pass unknown options to the article class
 \DeclareOption*{%
-  \PassOptionsToClass{\CurrentOption}{article}%
+  \PassOptionsToClass{\CurrentOption}{amsart}%
 }
 \ProcessOptions\relax
 % Use article as base class
@@ -31,7 +31,6 @@
 \definecolor{uc}{HTML}{1659A3}
 \RequirePackage{hyperref}
 \hypersetup{xetex, colorlinks, linkcolor=lc, urlcolor=uc, citecolor=cc}
-\RequirePackage[style=alphabetic]{biblatex}
 
 \newtheorem{Theorem}[equation]{Theorem}
 \newtheorem{Proposition}[equation]{Proposition}
