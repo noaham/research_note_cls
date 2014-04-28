@@ -20,6 +20,39 @@
 \RequirePackage{titling}
 \RequirePackage[small,sf,compact]{titlesec}
 
+% These packages are commonly used.
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage[style=alphabetic]{biblatex}
+\RequirePackage{xcolor}
+\definecolor{lc}{HTML}{F2594B}
+\definecolor{cc}{HTML}{00A388}
+\definecolor{uc}{HTML}{1659A3}
+\RequirePackage{hyperref}
+\hypersetup{xetex, colorlinks, linkcolor=lc, urlcolor=uc, citecolor=cc}
+\RequirePackage[style=alphabetic]{biblatex}
+
+\newtheorem{Theorem}[equation]{Theorem}
+\newtheorem{Proposition}[equation]{Proposition}
+\newtheorem{Lemma}[equation]{Lemma}
+\newtheorem{Corollary}[equation]{Corollary}
+\newtheorem{Conjecture}[equation]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{Definition}[equation]{Definition}
+\newtheorem{Example}[equation]{Example}
+\newtheorem{Remark}[equation]{Remark}
+
+\numberwithin{equation}{section}
+
+% small piece of code to fix a clash between amsthm and parkip which causes
+% theorems to have zero space to previous line
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+\makeatother
+
 
 %%% Set global fonts
 \setmainfont[
@@ -71,3 +104,24 @@
 \titleformat{\section}[hang]{\fontsize{16pt}{18pt}\sffamily}{\thesection}{10pt}{}[]
 \titleformat{\subsection}[hang]{\fontsize{12pt}{14pt}\sffamily}{\thesubsection}{10pt}{}
 \titleformat{\subsubsection}[runin]{\bf\rmfamily}{\thesubsubsection}{0.5em}{}[.]
+
+% Here we collect some standard commands we use frequently
+% for f:X -> Y; the default spacing isn't great
+\newcommand{\map}[2]{\,{:}\,#1\!\longrightarrow\!#2}
+% set with conditions (fixes spacing issues) 
+% e.g: \set{x\in |R}{x>0} is the set of all possible real numbers
+\newcommand{\setc}[2]{\left\{\:\!#1\:\middle|\;\!#2\!\:\right\}}
+% set without conditions e.g. \set{1,2,3}, just fixes spacing issues
+\newcommand{\set}[1]{\left\{\,\!#1\,\!\right\}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\renewcommand{\AA}{\mathbb{A}}
+
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Spec}{Spec}
